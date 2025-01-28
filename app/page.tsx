@@ -115,151 +115,148 @@ const ReferralBuilder = () => {
         {/* Form Section */}
         <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-4">
           <h1 className="text-2xl font-bold mb-4">Referral Builder</h1>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            {/* Referral Details Section */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <h2 className="col-span-2 text-lg font-bold text-gray-700">
-                Referral Details
-              </h2>
-              {/* Given Name */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Given Name
-                </label>
-                <input
-                  {...register("givenName", { required: true })}
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="Enter given name"
-                />
-              </div>
-
-              {/* Surname */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Surname
-                </label>
-                <input
-                  {...register("surname", { required: true })}
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="Enter surname"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <input
-                  {...register("email", { required: true })}
-                  type="email"
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="Enter email"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Phone
-                </label>
-                <input
-                  {...register("phone", { required: true })}
-                  type="tel"
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="Enter phone number"
-                />
-              </div>
+          {/* Form Section */}
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="grid grid-cols-2 gap-4">
+            {/* Personal Details */}
+            <div className="col-span-2 border-b border-gray-300 pb-4">
+              <h2 className="text-lg font-bold mb-2">Referral Details</h2>
             </div>
 
-            {/* Divider */}
-            <hr className="border-gray-300 my-6" />
-
-            {/* Address Section */}
-            <fieldset className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <legend className="col-span-2 text-lg font-bold text-gray-700">
-                Address
-              </legend>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Home Name OR #
-                </label>
-                <input
-                  {...register("address.homeNameOrNumber", { required: true })}
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="Home Name OR #"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Street
-                </label>
-                <input
-                  {...register("address.street", { required: true })}
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="Street"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Suburb
-                </label>
-                <input
-                  {...register("address.suburb", { required: true })}
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="Suburb"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  State
-                </label>
-                <input
-                  {...register("address.state", { required: true })}
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="State"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Postcode
-                </label>
-                <input
-                  {...register("address.postcode", { required: true })}
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="Postcode"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Country
-                </label>
-                <input
-                  {...register("address.country", { required: true })}
-                  className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                  placeholder="Country"
-                />
-              </div>
-            </fieldset>
-
-            {/* Avatar Upload */}
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Upload Avatar
+                Given Name
               </label>
               <input
-                {...register("avatar")}
-                type="file"
-                className="mt-1 block w-full"
+                {...register("givenName", { required: true })}
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="Enter given name"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Surname
+              </label>
+              <input
+                {...register("surname", { required: true })}
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="Enter surname"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Email
+              </label>
+              <input
+                {...register("email", { required: true })}
+                type="email"
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="Enter email"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Phone
+              </label>
+              <input
+                {...register("phone", { required: true })}
+                type="tel"
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="Enter phone number"
               />
             </div>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
-              {editingId ? "Update Referral" : "Create Referral"}
-            </button>
+            {/* Horizontal Divider */}
+            <div className="col-span-2 border-b border-gray-300 pb-4 pt-4">
+              <h2 className="text-lg font-bold mb-2">Address</h2>
+            </div>
+
+            {/* Address Section */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Home Name OR #
+              </label>
+              <input
+                {...register("address.homeNameOrNumber", { required: true })}
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="Home Name OR #"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Street
+              </label>
+              <input
+                {...register("address.street", { required: true })}
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="Street"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Suburb
+              </label>
+              <input
+                {...register("address.suburb", { required: true })}
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="Suburb"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                State
+              </label>
+              <input
+                {...register("address.state", { required: true })}
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="State"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Postcode
+              </label>
+              <input
+                {...register("address.postcode", { required: true })}
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="Postcode"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Country
+              </label>
+              <input
+                {...register("address.country", { required: true })}
+                className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                placeholder="Country"
+              />
+            </div>
+            {/* Avatar Upload and Submit Buttons */}
+            <div className="col-span-2 flex justify-between items-center mt-4">
+              {/* Upload Avatar */}
+              <div>
+                <input
+                  {...register("avatar")}
+                  type="file"
+                  id="avatar-upload"
+                  className="hidden"
+                />
+                <label
+                  htmlFor="avatar-upload"
+                  className="block bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer hover:bg-blue-600 transition">
+                  Upload Avatar
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition">
+                {editingId ? "Update Referral" : "Create Referral"}
+              </button>
+            </div>
           </form>
         </div>
 
